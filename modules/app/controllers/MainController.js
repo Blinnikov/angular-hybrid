@@ -1,25 +1,14 @@
 import '@progress/kendo-ui/js/kendo.popup';
 import '@progress/kendo-ui/js/kendo.multiselect.js';
 
-const defaultSelectedItem = [{ ProductName: "Chai", ProductID: 1 }];
+function MainController($scope, $state) {
+    $scope.onButtonClick = onButtonClick;
 
-function MainController($scope) {
-    $scope.selectOptions = {
-        placeholder: "Select products...",
-        dataTextField: "ProductName",
-        dataValueField: "ProductID",
-        dataSource: {
-            transport: {
-                read: {
-                    url: "http://demos.telerik.com/kendo-ui/service/products",
-                    dataType: "jsonp"
-                }
-            }
-        }
-    };
-    $scope.selectedItems = defaultSelectedItem;
+    function onButtonClick() {
+        $state.go('login');
+    }
 }
 
-MainController.$inject = ['$scope'];
+MainController.$inject = ['$scope', '$state'];
 
 export default MainController;

@@ -6,7 +6,6 @@ module
     .run(onModuleRun);
 
 function configStateProvider($stateRegistryProvider) {
-    console.log('Configuring state provider with ', contentState);
     $stateRegistryProvider.register(contentState);
 }
 

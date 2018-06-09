@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-// var jquery = require("jquery");
 
 const entries = ['app', 'auth'].reduce((result, moduleName) => {
     result[`${moduleName}`] = `./modules/${moduleName}/${moduleName}.config.js`;
