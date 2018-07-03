@@ -1,1 +1,1 @@
-# kendoui-angularjs-uirouter-webpack-demo
+# Test app to prove that AngularJS can be converted to Angular.
