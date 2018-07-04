@@ -5,10 +5,23 @@
     <title>WebPack, Kendo UI and AngularJS!</title>
 </head>
 
-<body ng-app="app" ng-strict-di>
-    <div ui-view></div>
+<body>
+    <div>
+        <div ui-view></div>
+        </div>
     </div>
+
+    <app-root></app-root>
+    
+    <script src="build/polyfills.js"></script>
+    <script src="build/styles.js"></script>
+    <script src="build/vendor.js"></script>
+    
     <script src="build/app.js"></script>
     <script src="build/auth.js"></script>
+
+    <script src="build/main.js"></script>
+
+
 </body>
 </html>
