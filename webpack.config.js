@@ -22,10 +22,10 @@ module.exports = {
     devtool: "source-map",
     mode: "development",
     optimization: {
-       splitChunks: {
-           chunks: 'all',
-           name: 'vendor'
-       },
+        splitChunks: {
+            chunks: 'all',
+            name: 'vendor'
+        },
     },
     plugins: [
         new webpack.ProvidePlugin({
@@ -35,17 +35,16 @@ module.exports = {
             "mainPath": "main.ts",
             "platform": 0,
             "hostReplacementPaths": {
-              "environments\\environment.ts": "environments\\environment.ts"
+                "environments\\environment.ts": "environments\\environment.ts"
             },
             "sourceMap": true,
             "tsConfigPath": "ng2-src\\tsconfig.app.json",
             "skipCodeGeneration": true,
             "compilerOptions": {}
-          })
+        })
     ],
     module: {
         rules: [
-            // Bundle stylesheets
             {
                 enforce: 'pre',
                 test: /\.css$/,
@@ -54,7 +53,6 @@ module.exports = {
                     path.join(process.cwd(), "ng2-src\\**")
                 ],
             },
-
             {
                 "include": [
                     path.join(process.cwd(), "ng2-src\\app\\app.component.css")
@@ -64,26 +62,24 @@ module.exports = {
                 // ],
                 "test": /\.css$/,
                 "use": [
-                  {
-                      "loader": "raw-loader",
-                    //   "loader": "style-loader"
-                }
+                    {
+                        "loader": "raw-loader",
+                        //   "loader": "style-loader"
+                    }
                 ]
-              },
-              {
+            },
+            {
                 "include": [
-                  path.join(process.cwd(), "ng2-src\\styles.css")
+                    path.join(process.cwd(), "ng2-src\\styles.css")
                 ],
                 "test": /\.css$/,
                 "use": [
-                  "style-loader",
-                  {
-                    "loader": "raw-loader"
-                  }
+                    "style-loader",
+                    {
+                        "loader": "raw-loader"
+                    }
                 ]
-              },
-
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+            },
             {
                 test: /\.js$/,
                 use: {
